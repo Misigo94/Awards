@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+{%load static%}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}
