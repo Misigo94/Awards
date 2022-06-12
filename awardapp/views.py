@@ -174,8 +174,8 @@ def search(request):
     query = request.GET.get('q','')
 
     if query:
-        queryset=(Q(username__icontains=query))
-        results = Profile.objects.filter(queryset).distinct()
+        queryset=(Q(title__icontains=query))
+        results = Project.objects.filter(queryset).distinct()
 
     else:
         results=[]
