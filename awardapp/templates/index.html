@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% block content %}
+    {% for project in res %}
+    <img src="{{project.image}}" alt="" srcset="">
+    <p>{{project.title}}</p>
+    <a href="{{project.link}}">Link to project</a>
+    <p>{{project.date}}</p>
+    <p>{{project.profile}}</p>
+
+    {% endfor %}
+    
+
+{% endblock %}
+
