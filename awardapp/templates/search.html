@@ -8,9 +8,9 @@
     <li>{{ item|escape }}</li>
     <p>{{item.username}}</p>
 
-    {% if profile.name %}
+    {% if project.title %}
 
-    <img src="{{ profile.profile.name }}" alt="user pic">
+    <img src="{{ project.project.name }}" alt="user pic">
     {% endif %}
     {% endfor %}
 </ul>
