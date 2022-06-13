@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% if query %}
-{%if results %}
-<ul>
-    {% for item in results %}
-    <li>{{ item|escape }}</li>
-    <p>{{item.username}}</p>
 
-    {% if project.title %}
-
-    <img src="{{ project.project.name }}" alt="user pic">
-    {% endif %}
+{%if projects %}
+    {% for project in projects %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{project.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{project.title}}</h5>
+            <p class="card-text">{{project.profile}}</p>
+            <p class="card-text">{{project.date}}</p>
+            <p class="card-text">{{project.profile}}</p>
+            <a href="{{project.link}}" class="btn btn-primary">Link</a>
+            <a href="{{url }}" class="btn btn-primary">Rate</a>
+        </div>
+    </div>
     {% endfor %}
-</ul>
-<p>Query returned not results </p>
-{% endif %}
 {% endif %}
 {% endblock %}
