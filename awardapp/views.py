@@ -171,13 +171,12 @@ def logout_user(request):
     return redirect('login')
 
 def search(request):
-    query = request.GET.get('q','')
-
-    if query:
-        queryset=(Q(title__icontains=query))
-        results = Project.objects.filter(queryset).distinct()
-
-    else:
-        results=[]
-    return render(request, 'search.html', {'results': results},{'query': query})
-
+        if request.method == 'GET':
+            query = request.GET.get('query')
+            if query:
+                projects = Project.objects.filter(title__icontains=query)
+                return render(request, 'search.html',{"projects": projects})
+            else:
+                message = "You haven't searched for any image"
+                return render(request, 'search.html',{"message":message})
+        
