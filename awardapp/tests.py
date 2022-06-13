@@ -58,4 +58,3 @@ class ProjectTestClass(TestCase):
         self.new_project.save_project()
         project = Project.get_single_project(self.new_project.id)
         self.assertTrue(project == self.new_project)
-# Create your tests here.
