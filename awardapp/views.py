@@ -15,6 +15,20 @@ from django.db.models import Q, query
 from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
+
+def index(request):
+    # res=requests.get('http://127.0.0.1:8000/project/').json()
+    return render(request, 'index.html')
+
+
+def output(request):
+    res=requests.get('http://127.0.0.1:8000/project/').json()
+    return render(request, 'output.html',{'res':res})
+
+
+
+
+
 #  create endpoint for profile_list
 @api_view(['GET','POST'])
 def profile_list(request):
@@ -104,9 +118,7 @@ def display_profile(request):
     return render(request, 'profile.html',{'form':form})
 
 
-def index(request):
-    res=requests.get('http://127.0.0.1:8000/project/').json()
-    return render(request, 'index.html',{'res':res})
+
 
 
 
