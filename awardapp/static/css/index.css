@@ -1,7 +1,48 @@
 body{
-    background-image:url('../images/back2.jpg');
-    background-position:center;
+    background-image:url('../images/back3.jpg');
+    background-position:initial;
     background-repeat: no-repeat;
     background-size: cover;
-    height:100vh;
+    height:50vh;
+}
+
+.content{
+    background-color: black;
+    opacity:0.8;
+}
+h1{
+    margin-top: 20%;
+    text-align: center;
+    color:white;
+
+}
+
+p{
+text-align: center;
+color:white;
+}
+
+.navv{
+    background-color: black;
+    opacity: 0.8;
+}
+
+.nav-link{
+    color:white;
+}
+.link ul li a{
+    color:white;
+}
+
+form{
+    background-color: black;
+    opacity: 0.5;
+}
+
+.card{
+    background-color:rgba(0, 0, 0, 0.798);
+}
+
+.title {
+    border-color: black;
 }
