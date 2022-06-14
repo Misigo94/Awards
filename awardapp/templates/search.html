@@ -9,10 +9,10 @@
         <div class="card-body">
             <h5 class="card-title">{{project.title}}</h5>
             <p class="card-text">{{project.profile}}</p>
-            <p class="card-text">{{project.date}}</p>
+            <!-- <p class="card-text">{{project.date}}</p> -->
             <p class="card-text">{{project.profile}}</p>
-            <a href="{{project.link}}" class="btn btn-primary">Link</a>
-            <a href="{{url }}" class="btn btn-primary">Rate</a>
+            <a href="{{project.link}}" class="btn btn-outline-danger">Link</a>
+            <a href="{%url 'votes'%}" class="btn btn-outline-success">Rate</a>
         </div>
     </div>
     {% endfor %}

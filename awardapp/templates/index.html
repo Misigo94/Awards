@@ -1,24 +1,22 @@
 {% extends 'base.html'%}
-{% block content %}
-    {% for project in res %}
-    <!-- <img src="{{project.image}}" alt="" srcset="">
-    <p>{{project.title}}</p>
-    <a href="{{project.link}}">Link to project</a>
-    <p>{{project.date}}</p>
-    <p>{{project.profile}}</p> -->
+{% load static %}
+{% block styles %}
 
-    <div class="card" style="width: 18rem;">
-        <img src="{{project.image}}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{project.title}}</h5>
-            <p class="card-text">{{project.profile}}</p>
-            <p class="card-text">{{project.date}}</p>
-            <p class="card-text">{{project.profile}}</p>
-            <a href="{{project.link}}" class="btn btn-primary">Link</a>
-            <a href="{{url }}" class="btn btn-primary">Rate</a>
-        </div>
-    </div>
-    {% endfor %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<section class="content">
+
+    <h1>
+        HOME OF AWARDS
+
+    </h1>
+
+    <p>VIEW AND RATE YOUR FAVOURITE PROJECTS</p>
+</section>
+    
 
 {% endblock %}   
 
