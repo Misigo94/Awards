@@ -13,7 +13,7 @@ from .forms import *
 import requests
 from django.db.models import Q, query
 from django.contrib.auth import authenticate,login,logout
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def index(request):
@@ -107,7 +107,7 @@ def project_detail(request,id):
 
         
 
-
+@login_required
 def display_profile(request):
     form = ProfileForm()
     if request.method == 'POST':
@@ -139,7 +139,7 @@ def register_user(request):
         form = RegisterForm()
     return render(request,'register/register.html',{'form':form})
 
-
+@login_required(login_url='login')
 def display_project(request):
         form =ProjectForm()
         if request.method == 'POST':
@@ -148,8 +148,9 @@ def display_project(request):
                 form.save()
                 return redirect(display_project)
 
-        return render(request, 'project.html', {'form': form})
 
+        return render(request, 'project.html', {'form': form})
+@login_required(login_url='login')
 def dis_votes(request):
     form = VotesForm()
     if request.method == 'POST':
@@ -159,6 +160,7 @@ def dis_votes(request):
             return HttpResponse("voted has been recorded")
 
     return render(request, 'votes.html',{'form':form})
+
 
 def login_user(request):
     form = LoginForm()
@@ -181,7 +183,8 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return redirect('login')
-
+    
+@login_required(login_url='login')
 def search(request):
         if request.method == 'GET':
             query = request.GET.get('query')
@@ -191,4 +194,4 @@ def search(request):
             else:
                 message = "You haven't searched for any image"
                 return render(request, 'search.html',{"message":message})
-        
+
