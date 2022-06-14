@@ -1,12 +1,12 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from .models import Profile,Project
+from .models import *
 # Create your tests here.
 
 class ProfileTestClass(TestCase):
     def setUp(self):
         self.new_user = User.objects.create_user(username='user',password='password')
-        self.new_profile = Profile(id=1,prof_user=self.new_user,bio='Test Bio',contact_info='0723030837',profile_Id=1)
+        self.new_profile = Profile(id=1,prof_user=self.new_user,profile_Id=1)
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_profile,Profile))
