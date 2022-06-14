@@ -6,6 +6,10 @@ Author
 Martin Misigo
 Getting Started
 
+API endpoints:
+Projects: https://martaward.herokuapp.com/project/
+Profile: https://martaward.herokuapp.com/profile/
+
 Prerequisites
 You will need to be running the following:
 
